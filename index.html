@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Self-Contained React</title>
+
+    <!-- React and ReactDOM from CDN -->
+    <script
+      src="https://unpkg.com/react@18/umd/react.production.min.js"
+      crossorigin
+    ></script>
+    <script
+      src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"
+      crossorigin
+    ></script>
+
+    <!-- Babel for JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Tailwind for styling -->
+    <script src="https://cdn.tailwindcss.com" rel="stylesheet"></script>
+
+    <!-- KaTeX for Latex rendering -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.15.1/dist/katex.min.js"></script>
+
+    <!-- Recharts for charting -->
+    <script src="https://unpkg.com/prop-types/prop-types.min.js"></script>
+    <script src="https://unpkg.com/recharts/umd/Recharts.js"></script>
+  </head>
+
+  <body
+    class="bg-gray-100 bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600"
+  >
+    <div id="root"></div>
+
+    <script type="text/babel">
+      const { useState, useCallback, useEffect } = React;
+
+      const Card = ({ children }) => (
+        <div className="p-6 bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-600 rounded shadow-xl">
+          <div>{children}</div>
+        </div>
+      );
+
+      const AppTemplate = () => {
+        // NOTE: here goes your custom logic
+        return (
+          <div class="flex h-screen">
+            <div class="w-full h-screen overflow-y-auto p-6 bg-white border-r-solid border-r-2 border-r-light-blue-500 shadow-lg">
+              <Card>Replace with custom JSX</Card>
+            </div>
+          </div>
+        );
+      };
+
+      ReactDOM.render(<AppTemplate />, document.getElementById("root"));
+    </script>
+  </body>
+
+  <footer class="bg-gray-800 text-white p-2 absolute bottom-0 mx-auto w-full">
+    <div class="container mx-auto text-center">
+      <p class="mb-1 text-sm">
+        Read more on:
+        <a
+          href="https://blog.ignaciobrasca.com/tools"
+          target="_blank"
+          class="underline hover:text-gray-400"
+        >
+          Made by @Warkanlock
+        </a>
+      </p>
+    </div>
+  </footer>
+</html>
